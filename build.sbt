@@ -15,6 +15,7 @@ libraryDependencies ++= Seq(
   "com.etaty.rediscala" %% "rediscala" % "1.4.2",
   // web jars
   "org.webjars" % "bootstrap" % "3.3.4",
+  "org.webjars" %% "webjars-play" % "2.4.0-2",
   "com.adrianhurt" %% "play-bootstrap" % "1.0-P24-B3-SNAPSHOT" exclude("org.webjars", "jquery"),
   "org.webjars" % "jquery" % "2.2.0",
   "org.webjars" % "font-awesome" % "4.5.0",

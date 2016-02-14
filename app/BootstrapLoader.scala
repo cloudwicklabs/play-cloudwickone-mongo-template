@@ -34,13 +34,13 @@ class ApplicationComponents(context: Context) extends BuiltInComponentsFromConte
   lazy val userService = new UserServiceImpl(new UserDaoMongo(reactiveMongoApi, new CounterDaoMongo(reactiveMongoApi)))
   lazy val userController = new controllers.UserController(messagesApi, userService = userService)
   lazy val assets = new controllers.Assets(httpErrorHandler)
-  // lazy val webAssets = new controllers.WebJarAssets(httpErrorHandler)
+  lazy val webAssets = new controllers.WebJarAssets(httpErrorHandler, configuration, environment)
 
   override def router: Router = new Routes(
     httpErrorHandler,
     applicationController,
     userController,
-    assets //,
-    //webAssets
+    assets,
+    webAssets
   )
 }
