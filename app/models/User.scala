@@ -1,20 +1,21 @@
 package models
 
-import java.time.ZonedDateTime
-
 import akka.util.ByteString
+import com.mohiva.play.silhouette.api.{Identity, LoginInfo}
+import org.joda.time.DateTime
 import play.api.libs.json.Json
 import redis.ByteStringFormatter
 
 case class User(
-  override val id: Option[Long],
-  firstName: String,
-  lastName: String,
-  age: Int,
-  active: Boolean,
-  createdDate: Option[ZonedDateTime] = Some(ZonedDateTime.now),
-  updatedDate: Option[ZonedDateTime] = Some(ZonedDateTime.now)
-) extends IdModelLong[User]
+  _id: String, // email
+  loginInfo: LoginInfo,
+  firstName: Option[String],
+  lastName: Option[String],
+  fullName: Option[String],
+  avatarURL: Option[String],
+  createdDate: Option[DateTime] = Some(DateTime.now),
+  updatedDate: Option[DateTime] = Some(DateTime.now)
+) extends Identity
 
 object User {
   implicit val jsonFormat = Json.format[User]

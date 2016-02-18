@@ -1,18 +1,25 @@
 package services
 
+import com.mohiva.play.silhouette.api.services.IdentityService
+import com.mohiva.play.silhouette.impl.providers.CommonSocialProfile
 import models.User
 import play.api.libs.json.JsValue
 
 import scala.concurrent.Future
 
-trait UserService {
-  def find(id: Long): Future[Option[User]]
+/**
+  * Handles actions to users.
+  */
+trait UserService extends IdentityService[User] {
+  def find(email: String): Future[Option[User]]
 
   def findAll(): Future[List[User]]
 
   def insert(user: User): Future[User]
 
-  def remove(id: Long): Future[Unit]
+  def insert(profile: CommonSocialProfile): Future[User]
 
-  def update(id: Long, update: JsValue): Future[User]
+  def remove(email: String): Future[Unit]
+
+  def update(email: String, update: JsValue): Future[User]
 }

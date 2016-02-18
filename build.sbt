@@ -13,6 +13,8 @@ libraryDependencies ++= Seq(
   "org.reactivemongo" %% "play2-reactivemongo" % "0.11.9",
   "org.reactivemongo" %% "reactivemongo-extensions-json" % "0.11.7.play24",
   "com.etaty.rediscala" %% "rediscala" % "1.4.2",
+  "com.mohiva" %% "play-silhouette" % "3.0.0",
+  "net.ceedubs" %% "ficus" % "1.1.2",
   // web jars
   "org.webjars" % "bootstrap" % "3.3.4",
   "org.webjars" %% "webjars-play" % "2.4.0-2",
