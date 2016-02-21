@@ -1,3 +1,5 @@
+package app
+
 import com.mohiva.play.silhouette.api.util.{Clock, PlayHTTPLayer}
 import com.mohiva.play.silhouette.impl.authenticators.{CookieAuthenticatorSettings, CookieAuthenticatorService, CookieAuthenticator}
 import com.mohiva.play.silhouette.impl.providers.{OAuth2Settings, SocialProviderRegistry}

@@ -22,7 +22,9 @@ libraryDependencies ++= Seq(
   "org.webjars" % "jquery" % "2.2.0",
   "org.webjars" % "font-awesome" % "4.5.0",
   "org.webjars" % "bootstrap-datepicker" % "1.4.0",
-  specs2 % Test
+  // test
+  specs2 % Test,
+  "com.mohiva" %% "play-silhouette-testkit" % "3.0.0" % "test"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
